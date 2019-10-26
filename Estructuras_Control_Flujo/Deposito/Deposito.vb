@@ -4,9 +4,6 @@ Module Deposito
     Sub Main()
         Const interesAnual As Int16 = 36
         Dim capital, meses, interesMensual, saldo, totalInteres As Int16
-        mostrarNumeros(capital, interesMensual, saldo, interesAnual, meses, totalInteres)
-    End Sub
-    Private Sub mostrarNumeros(capital, interesMensual, saldo, interesAnual, meses, totalInteres)
         Console.Write("Ingrese capital: ")
         capital = Console.ReadLine()
         Console.Write("Total de meses: ")

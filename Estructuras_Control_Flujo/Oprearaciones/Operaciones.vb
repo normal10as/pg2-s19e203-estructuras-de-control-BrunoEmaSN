@@ -21,61 +21,45 @@ Module Operaciones
         Console.WriteLine(" multiplicacion {0} division {1}", calcular(Operaciones.multiplicacion, 5, 8, 12, 87), calcular(Operaciones.division, 5, 8, 12, 87))
         Console.WriteLine("sin enumeracion: suma {0}", calcular2(5, 8, 12, 87))
     End Sub
-    Function calcular2(valor1, valor2) As Int16
+    Function calcular2(valor1 As Single, valor2 As Single) As Single
         Return suma(valor1, valor2)
     End Function
-    Function calcular2(valor1, valor2, valor3) As Int16
+    Function calcular2(valor1 As Single, valor2 As Single, valor3 As Single) As Single
         Return suma(suma(valor1, valor2), valor3)
     End Function
-    Function calcular2(valor1, valor2, valor3, valor4) As Int16
+    Function calcular2(valor1 As Single, valor2 As Single, valor3 As Single, valor4 As Single) As Single
         Return suma(suma(valor1, valor2), suma(valor3, valor4))
     End Function
-    Function calcular(operacionaes, valor1, valor2) As Double
+    Function calcular(operacionaes As Operaciones, valor1 As Single, valor2 As Single) As Single
         Select Case operacionaes
-            Case operacionaes.suma
+            Case Operaciones.suma
                 Return suma(valor1, valor2)
-            Case operacionaes.resta
+            Case Operaciones.resta
                 Return resta(valor1, valor2)
-            Case operacionaes.multiplicacion
+            Case Operaciones.multiplicacion
                 Return multiplicacion(valor1, valor2)
-            Case operacionaes.division
+            Case Operaciones.division
                 Return division(valor1, valor2)
+            Case Else
+                Return 0
         End Select
     End Function
-    Function calcular(operacionaes, valor1, valor2, valor3) As Double
-        Select Case operacionaes
-            Case operacionaes.suma
-                Return suma(suma(valor1, valor2), valor3)
-            Case operacionaes.resta
-                Return resta(resta(valor1, valor2), valor3)
-            Case operacionaes.multiplicacion
-                Return multiplicacion(multiplicacion(valor1, valor2), valor3)
-            Case operacionaes.division
-                Return division(division(valor1, valor2), valor3)
-        End Select
+    Function calcular(operacionaes As Operaciones, valor1 As Single, valor2 As Single, valor3 As Single) As Single
+        Return calcular(operacionaes, (calcular(operacionaes, valor1, valor2)), valor3)
     End Function
-    Function calcular(operacionaes, valor1, valor2, valor3, valor4) As Double
-        Select Case operacionaes
-            Case operacionaes.suma
-                Return suma(suma(valor1, valor2), suma(valor3, valor4))
-            Case operacionaes.resta
-                Return resta(resta(valor1, valor2), resta(valor3, valor4))
-            Case operacionaes.multiplicacion
-                Return multiplicacion(multiplicacion(valor1, valor2), multiplicacion(valor3, valor4))
-            Case operacionaes.division
-                Return division(division(valor1, valor2), division(valor3, valor4))
-        End Select
+    Function calcular(operacionaes As Operaciones, valor1 As Single, valor2 As Single, valor3 As Single, valor4 As Single) As Single
+        Return calcular(operacionaes, calcular(operacionaes, valor1, valor2, valor3), valor4)
     End Function
-    Function suma(valor1 As Int32, valor2 As Int32) As Int32
+    Function suma(valor1 As Single, valor2 As Single) As Single
         Return valor1 + valor2
     End Function
-    Function resta(valor1 As Int32, valor2 As Int32) As Int32
+    Function resta(valor1 As Single, valor2 As Single) As Single
         Return valor1 - valor2
     End Function
-    Function multiplicacion(valor1 As Int32, valor2 As Int32) As Int32
+    Function multiplicacion(valor1 As Single, valor2 As Single) As Single
         Return valor1 * valor2
     End Function
-    Function division(valor1 As Int32, valor2 As Int32) As Double
+    Function division(valor1 As Single, valor2 As Single) As Single
         Return valor1 / valor2
     End Function
 End Module

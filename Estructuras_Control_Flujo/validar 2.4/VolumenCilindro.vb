@@ -13,16 +13,16 @@ Module VolumenCilindro
     End Sub
     Function ingrese_un_numero_positivo() As Single
         Dim numero1 As Single
-        Dim bandera As Int16
+        Dim bandera As Boolean = False
         Do
             numero1 = Console.ReadLine()
             If numero1 <= 0 Then
                 Console.WriteLine("Preste Atencion Ingrese otro valor")
                 Console.WriteLine("Que sea positivo, Gracias")
             Else
-                bandera = 1
+                bandera = True
             End If
-        Loop Until (bandera = 1)
+        Loop Until (bandera = True)
         Return numero1
     End Function
     Private Function volumen_cilindro(r, h) As Double

@@ -2,10 +2,9 @@ Imports System
 
 Module ParesImpares
     Sub Main()
-        Dim valor, par, impar, contador As UInt16
-        es_Par_Impar(valor, contador, par, impar)
-    End Sub
-    Private Sub es_Par_Impar(valor, contador, par, impar)
+        Dim valor As Single
+        Dim par, impar, contador As UInt16
+
         Do
             Console.WriteLine("Ingrese un Numero")
             valor = Console.ReadLine()

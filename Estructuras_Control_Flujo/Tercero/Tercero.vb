@@ -2,36 +2,40 @@ Imports System
 
 Module Tercero
     Enum posiciones
-        primer = 1
-        segundo = 2
-        tercero = 3
-        cuarto = 4
-        quinto = 5
+        primer
+        segundo
+        tercero
+        cuarto
+        quinto
     End Enum
     Sub Main()
-        Dim a, mayor As Int16
+        Dim a, b, c, d, e As Single
         Dim i As posiciones = 1
-        a = valor(a)
-        mayor = a
-        a = valor(a)
-        elMayor(a, mayor, i)
-        a = valor(a)
-        elMayor(a, mayor, i)
-        a = valor(a)
-        elMayor(a, mayor, i)
-        a = valor(a)
-        elMayor(a, mayor, i)
+        a = valor()
+        b = valor()
+        c = valor()
+        d = valor()
+        e = valor()
+        i = elMayor(a, b, c, d, e)
         Console.WriteLine("El {0} numero es el mayor", i.ToString)
     End Sub
-    Private Function valor(a) As Int16
+    Private Function valor() As Single
+        Dim numero As Single
         Console.WriteLine("Ingrese un numero")
-        a = Console.ReadLine()
-        Return a
+        numero = Console.ReadLine()
+        Return numero
     End Function
-    Private Sub elMayor(a, ByRef mayor, ByRef i)
-        If a > mayor Then
-            mayor = a
-            i += 1
+    Private Function elMayor(a As Single, b As Single, c As Single, d As Single, e As Single) As posiciones
+        If a > b And a > c And a > d And a > e Then
+            Return posiciones.primer
+        ElseIf b > c And b > d And b > e Then
+            Return posiciones.segundo
+        ElseIf c > d And c > e Then
+            Return posiciones.tercero
+        ElseIf d > e Then
+            Return posiciones.cuarto
+        Else
+            Return posiciones.quinto
         End If
-    End Sub
+    End Function
 End Module

@@ -4,15 +4,21 @@ Module Venta
     Sub Main()
         Dim precioUnitario, DE As Double
         Dim cantidad, subTotal As Int16
+
         Console.WriteLine("Ingrese Precio Unitario")
         precioUnitario = Console.ReadLine()
+
         Console.WriteLine("Ingrese cantidad")
         cantidad = Console.ReadLine()
+
         subTotal = cantidad * precioUnitario
+
         Console.WriteLine("Sub-total: {0}", subTotal)
         DE = Desc(cantidad, DE)
+
         Console.Write("Descuento aplicado {0} %: ", DE)
         DE = (subTotal * DE) / 100
+
         Console.WriteLine(DE)
         Console.WriteLine("Total: {0}", subTotal - DE)
     End Sub

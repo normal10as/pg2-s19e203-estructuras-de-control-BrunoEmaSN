@@ -8,19 +8,19 @@ Module sumatoria_de_cuadrados
     End Sub
     Function validar_numero() As Integer
         Dim numero1 As Single
-        Dim numero2, bandera As Int16
-        bandera = 0
+        Dim numero2 As Int16
+        Dim bandera As Boolean = False
         Do
             Console.Write("Ingrese un valor entero positivo: ")
             numero1 = Console.ReadLine()
             numero2 = numero1
             If numero1 = numero2 And numero1 > 0 Then
-                bandera = 1
+                bandera = True
             Else
                 Console.WriteLine("Preste Atencion Ingrese otro valor")
                 Console.WriteLine("Que sea entero positivo, Gracias")
             End If
-        Loop Until (bandera = 1)
+        Loop Until (bandera = True)
         Return numero1
     End Function
     Sub mostrar_en_pantalla(numero)

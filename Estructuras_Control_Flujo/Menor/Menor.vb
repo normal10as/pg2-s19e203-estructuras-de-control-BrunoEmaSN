@@ -2,24 +2,25 @@ Imports System
 
 Module Menor
     Sub Main()
-        Dim a, menor As Int16
-        a = ingreseNumero(a)
-        menor = a
-        a = ingreseNumero(a)
-        menor = elMenor(a, menor)
-        a = ingreseNumero(a)
-        menor = elMenor(a, menor)
-        Console.WriteLine("El menor es: {0}", menor)
+        Dim a, b, c As Single
+        a = ingreseNumero()
+        b = ingreseNumero()
+        c = ingreseNumero()
+        Console.WriteLine("El menor es: {0}", elMenor(a, b, c))
     End Sub
-    Private Function ingreseNumero(a) As Int16
+    Private Function ingreseNumero() As Single
+        Dim numero As Single
         Console.WriteLine("Ingrese un numero")
-        a = Console.ReadLine()
-        Return a
+        numero = Console.ReadLine()
+        Return numero
     End Function
-    Private Function elMenor(a, menor) As Int16
-        If a < menor Then
-            menor = a
+    Private Function elMenor(a As Single, b As Single, c As Single) As Single
+        If a < b Then
+            Return a
+        ElseIf b < c Then
+            Return b
+        Else
+            Return c
         End If
-        Return menor
     End Function
 End Module
